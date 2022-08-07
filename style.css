@@ -58,12 +58,13 @@ body {
 }
 
 .display-calc {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-top: auto;
+    opacity: 0.6;
 }
 
 .display-result {
-    font-size: 3.5vw;
+    font-size: 2.5vw;
 }
 
 #calculations {
@@ -117,7 +118,7 @@ body {
     color: #8A8A8A;
 }
 
-.button-clear {
+.button-all-clear, .button-delete, .button-clear {
     color: #FCA311;
     background-color: #171717;
 }
