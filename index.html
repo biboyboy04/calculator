@@ -6,26 +6,29 @@
         <title>Calculator</title>
         <link rel="stylesheet" href="style.css">
         <script src="script.js" defer></script>
+        <script src="https://kit.fontawesome.com/c36cb32178.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <div class="title">Calculator</div>
         <div class="calculator">
-            <div class="display-calc">
-                <p id="calculations"></p>
-                <br>
+            <div class="display-container">
+                <div class="display-calc">
+                    <p id="calculations"></p>
+                    <br>
+                </div>
+                <div class="display-result">
+                    <p id="result">0</p>
             </div>
-            <div class="display-result">
-                <p id="result">0</p>
             </div>
             <div class="button-container">
-                <button class="button-all-clear" id="all-clear" value="all-clear">AC</button>
                 <button class="button-clear" id="clear" value="clear">C</button>
+                <button class="button-clear-entry" id="clear-entry" value="clear-entry">CE</button>
                 <button class="button-operation" id="modulo" value="%">%</button>
-                <button class="button-operation" id="divide" value="/">&#8725;</button>
+                <button class="button-operation" id="divide" value="/">&#247;</button>
                 <button class="button-number" id="7" value="7">7</button>
                 <button class="button-number" id="8" value="8">8</button>
                 <button class="button-number" id="9" value="9">9</button>
-                <button class="button-operation" id="multiply" value="*">&#10005;</button>
+                <button class="button-operation" id="multiply" value="*">&times;</button>
                 <button class="button-number" id="4" value="4">4</button>
                 <button class="button-number" id="5" value="5">5</button>
                 <button class="button-number" id="6" value="6">6</button>
@@ -35,11 +38,14 @@
                 <button class="button-number" id="3" value="3">3</button>
                 <button class="button-operation" id="add" value="+">+</button>
                 <button class="button-number" id="0" value="0">0</button>
-                <button class="button-number" id="period" value=".">.</button>
-                <button class="button-delete" id="delete" value="delete">&#8678;</button>
+                <button class="button-period" id="period" value=".">.</button>
+                <button class="button-delete" id="delete" value="delete">&larr;</button>
                 <button class="button-equals" id="equals" value="=">=</button>
             </div>
         </div>
-        <div class="footer">Footer</div>
+        <div class="footer">
+            Made by: biboyboy04
+            <i class="fa-brands fa-github"></i>
+         </div>
     </body>
 </html>
