@@ -2,7 +2,7 @@
 
 html {
     box-sizing: border-box;
-    font-size: 1vmin;
+    font-size: 8px;
     font-family: 'Roboto Mono', monospace;
 }
 *, *:before, *:after {
@@ -40,9 +40,9 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #000000;
-    width: min(60%, 400px);
-    height: min(70%, 600px);
-    min-height: 600px;
+    width: 350px;
+    height: 600px;
+
     border-radius: 25px;
     overflow: hidden;
     box-shadow:
