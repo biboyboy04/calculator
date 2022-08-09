@@ -46,7 +46,7 @@ function operate(operation, a, b) {
 const result = document.querySelector("#result");
 const calc = document.querySelector("#calculations");
 
-// placeholders for operate function
+// placeholders for operate function parameters
 let firstNumber = 0;
 let secondNumber = 0;
 let operation = "";
@@ -57,34 +57,35 @@ let clickedEquals = false;
 let clickedNumber = false;
 let numberOfOperation = 0;
 
-const numberButtons = document.querySelectorAll(".button-number");
-numberButtons.forEach((button) =>
-  button.addEventListener("click", (e) => {
-    clickedNumber = true;
+const numberButtons = document.querySelectorAll('.button-number');
+numberButtons.forEach(button => button.addEventListener('click', e => {
 
+    clickedNumber = true;
+    
     // if clicked operation, store the text value of result before clicking another value
     // the text value before will be wiped out if you click another value
     // clear first result if pressed an operator to get second result value
-    if (clickedOperations) {
-      firstNumber = result.textContent;
-      clickedOperations = false;
-      result.textContent = "";
+    if(clickedOperations){
+        firstNumber = result.textContent;
+        clickedOperations = false;
+        result.textContent = "";
     }
     // call clear function to restart all the values of the calc
-    if (clickedEquals) {
-      clickedEquals = false;
-      // reset after clicking equals button
-      clear();
+    if(clickedEquals){
+        clickedEquals = false;
+        // reset after clicking equals button
+        clear();
+
     }
     // clear the initial value "0" so that the first pressed value will be at the front
-    if (result.textContent == "0") {
-      result.textContent = "";
+    if(result.textContent == "0") {
+        result.textContent = "";
     }
 
     // add pressed number values at the back
     result.textContent += e.target.textContent;
-  })
-);
+    
+}));
 
 const periodButton = document.querySelector(".button-period");
 periodButton.addEventListener("click", (e) => {
@@ -96,43 +97,41 @@ periodButton.addEventListener("click", (e) => {
   result.textContent += e.target.textContent;
 });
 
-const operationButtons = document.querySelectorAll(".button-operation");
-operationButtons.forEach((button) =>
-  button.addEventListener("click", (e) => {
+const operationButtons = document.querySelectorAll('.button-operation');
+operationButtons.forEach(button => button.addEventListener('click', e => {
     clickedOperations = true;
 
     // clear calculation text
-    if (clickedEquals) {
-      calc.textContent = "";
-      clickedEquals = false;
+    if(clickedEquals){
+        calc.textContent = "";
+        clickedEquals = false;
     }
 
     if (clickedNumber) {
-      // track the number of operation clicks
-      numberOfOperation++;
+        // track the number of operation clicks
+        numberOfOperation++;
 
-      secondNumber = result.textContent;
+        secondNumber = result.textContent;
 
-      // add result text and operation sign to calculation text
-      calc.textContent += result.textContent + e.target.textContent;
+        // add result text and operation sign to calculation text
+        calc.textContent += result.textContent+e.target.textContent;
 
-      // evaluate previous pair of numbers if another operation is added
-      if (numberOfOperation > 1) {
-        // +in var is unary. It converts operand to number if not number
-        result.textContent = operate(operation, +firstNumber, +secondNumber);
-      }
+        // evaluate previous pair of numbers if another operation is added
+        if (numberOfOperation > 1) {
+            // +in var is unary. It converts operand to number if not number
+            result.textContent = operate(operation, +firstNumber, +secondNumber);
+        }
     }
 
     operation = e.target.value;
 
     // if the last calc text value is an operation, you can change it to another operation
-    if (calc.textContent != "") {
-      calc.textContent = calc.textContent.slice(0, -1) + e.target.textContent;
+    if(calc.textContent != ""){
+        calc.textContent = calc.textContent.slice(0,-1) + e.target.textContent;
     }
 
     clickedNumber = false;
-  })
-);
+}));
 
 const equalsButton = document.querySelector("#equals");
 equalsButton.addEventListener("click", (e) => {
