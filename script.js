@@ -39,8 +39,8 @@ function operate(operation, a, b) {
     default:
       break;
   }
-
-  return result;
+ 
+  return Math.round((result + Number.EPSILON) * 100) / 100;
 }
 
 const result = document.querySelector("#result");
