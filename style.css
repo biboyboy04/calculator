@@ -31,28 +31,19 @@ body {
   font-weight: bolder;
 }
 
-/* .calculator-container {
-    display: inline;
-    height: 70%;
-} */
-
 .calculator {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #000000;
-
   min-height: 600px;
   min-width: 350px;
-
   border-radius: 25px;
   overflow: hidden;
   box-shadow: 0 5px 10px grey, 0 15px 40px grey;
   opacity: 0.9;
   margin: 4em 1em 4em;
-  /* border-top: 3px solid #FCA311;
-    border-bottom: 3px solid #FCA311; */
 }
 
 .footer {
