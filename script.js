@@ -63,15 +63,14 @@ numberButtons.forEach(button => button.addEventListener('click', e => {
 
     clickedNumber = true;
     
-    // if clicked operation, store the text value of result before clicking another value
-    // the text value before will be wiped out if you click another value
+    // if clicked operation, store the text value of result as first number before clicking another value
     // clear first result if pressed an operator to get second result value
     if(clickedOperations){
         firstNumber = result.textContent;
         clickedOperations = false;
         result.textContent = "";
     }
-    // call clear function to restart all the values of the calc
+    // after clicking equals, call clear function to restart all the values of the calc
     if(clickedEquals){
         clickedEquals = false;
         // reset after clicking equals button
@@ -102,7 +101,8 @@ const operationButtons = document.querySelectorAll('.button-operation');
 operationButtons.forEach(button => button.addEventListener('click', e => {
     clickedOperations = true;
 
-    // clear calculation text
+    // clear calculation text when clicked equals
+    //  making latest result as the first number
     if(clickedEquals){
         calc.textContent = "";
         clickedEquals = false;
@@ -175,3 +175,13 @@ function clear() {
   secondNumber = 0;
   result.textContent = 0;
 }
+
+// Get the pressed key's value
+window.addEventListener('keydown', (e) => {
+  // Get pressed key's value and store it 
+  // if there's no existing button value to select then it returns null
+  var key = document.querySelector(`button[value="${e.key}"]`);
+  if(key){
+    key.click();
+  }
+});
